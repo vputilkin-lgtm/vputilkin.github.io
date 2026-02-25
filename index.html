@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Консалтинг РФ–КНР / ВЭД — сопровождение поставок, контрагентов, контрактов</title>
+  <meta name="description" content="Консалтинг по направлению РФ–КНР / ВЭД: поиск поставщиков, проверка контрагентов, переговоры, контракты, логистика, платежи, сопровождение сделки под ключ." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Консалтинг РФ–КНР / ВЭД" />
+  <meta property="og:description" content="Сопровождение ВЭД РФ–КНР: поставщики, проверка, переговоры, контракты, логистика, платежи. Прозрачный процесс и контроль рисков." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --muted:#9fb0d0;
+      --text:#e8eefc;
+      --accent:#6ee7ff;
+      --accent2:#8b5cf6;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(900px 450px at 20% 5%, rgba(110,231,255,.18), transparent 55%),
+        radial-gradient(900px 450px at 85% 0%, rgba(139,92,246,.16), transparent 55%),
+        radial-gradient(900px 450px at 60% 85%, rgba(110,231,255,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .mark{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(139,92,246,.9));
+      box-shadow: 0 10px 25px rgba(110,231,255,.18);
+    }
+    .menu{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
+    .menu a{
+      font-size:14px; color: rgba(232,238,252,.86);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      border-color: var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18) }
+    .btn:active{ transform: translateY(1px) }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(139,92,246,.92));
+      color:#061018;
+      box-shadow: 0 20px 45px rgba(139,92,246,.15);
+    }
+    .btn.primary:hover{ filter: brightness(1.04) }
+
+    /* hero */
+    .hero{padding:64px 0 22px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .panel{
+      border:1px solid var(--border);
+      background: rgba(15,26,51,.65);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:28px 26px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-size:13px;
+      color: rgba(232,238,252,.86);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{width:8px; height:8px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(110,231,255,.10);
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.5px;
+    }
+    .lead{
+      margin:0;
+      color: rgba(232,238,252,.82);
+      font-size:16px;
+      max-width: 60ch;
+    }
+    .hero-actions{
+      margin-top:18px;
+      display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .badges{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      color: rgba(232,238,252,.80);
+      font-size:13px;
+    }
+    .badge{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero-right{padding:20px}
+    .stat{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      margin-bottom:12px;
+    }
+    .stat:last-child{margin-bottom:0}
+    .stat .t{font-size:13px; color: rgba(232,238,252,.72)}
+    .stat .v{font-size:18px; font-weight:700; margin-top:6px}
+    .stat .s{font-size:13px; color: rgba(159,176,208,.95); margin-top:6px}
+
+    /* sections */
+    section{padding:44px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; margin-bottom:16px;
+    }
+    h2{margin:0; font-size:24px; letter-spacing:-.2px}
+    .hint{margin:0; color: rgba(232,238,252,.70); font-size:14px}
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(15,26,51,.55);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color: rgba(232,238,252,.76); font-size:14px}
+    .tagline{margin-top:10px; color: rgba(159,176,208,.95); font-size:13px}
+
+    .process{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+    }
+    .step{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .n{
+      width:32px; height:32px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800;
+      color:#061018;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(139,92,246,.92));
+      margin-bottom:10px;
+    }
+    .step .t{font-weight:700; margin:0 0 6px; font-size:14px}
+    .step .d{margin:0; color: rgba(232,238,252,.74); font-size:13px}
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+
+    .list{
+      margin:10px 0 0; padding:0 0 0 18px;
+      color: rgba(232,238,252,.76);
+      font-size:14px;
+    }
+    .list li{margin:8px 0}
+
+    /* contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
+    .form{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(15,26,51,.55);
+    }
+    label{display:block; font-size:13px; color: rgba(232,238,252,.80); margin:10px 0 6px}
+    input, textarea{
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding:12px 12px;
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{
+      border-color: rgba(110,231,255,.40);
+      box-shadow: 0 0 0 4px rgba(110,231,255,.10);
+    }
+    .form-actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .note{
+      color: rgba(159,176,208,.95);
+      font-size:12px;
+      margin-top:10px;
+    }
+    .sidebar{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .kv{margin:0; font-size:14px; color: rgba(232,238,252,.78)}
+    .kv b{color: var(--text)}
+    .sep{height:1px; background: rgba(255,255,255,.10); margin:14px 0}
+
+    footer{
+      padding:26px 0 34px;
+      border-top:1px solid var(--border);
+      color: rgba(159,176,208,.95);
+      font-size:13px;
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .mini{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .mini a{
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .mini a:hover{
+      border-color: var(--border);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr 1fr}
+      .two{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      h1{font-size:36px}
+    }
+    @media (max-width: 520px){
+      .process{grid-template-columns:1fr}
+      h1{font-size:32px}
+      .menu{display:none}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Консалтинг РФ–КНР / ВЭД",
+    "areaServed":["RU","CN"],
+    "serviceType":["ВЭД консалтинг","Сопровождение поставок","Проверка контрагентов","Контракты","Логистика"],
+    "inLanguage":"ru-RU"
+  }
+  </script>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="На главную">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Консалтинг РФ–КНР / ВЭД</span>
+        </a>
+
+        <nav class="menu" aria-label="Навигация">
+          <a href="#services">Услуги</a>
+          <a href="#process">Процесс</a>
+          <a href="#cases">Кому полезно</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="cta">
+          <!-- УБРАНО: кнопка/ссылка "Запрос" -->
+          <button class="btn primary" id="btnCall" type="button">Обсудить задачу</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero">
+        <div class="grid">
+          <div class="panel hero-left">
+            <div class="kicker"><span class="dot"></span> РФ–КНР / ВЭД • практичное сопровождение сделок</div>
+            <h1>Снижаем риски и ускоряем импорт/экспорт с Китаем — от запроса до поставки.</h1>
+            <p class="lead">
+              Помогаем выстроить безопасную и прозрачную схему ВЭД: поиск и верификация поставщиков,
+              переговоры, контракты, логистика, платежи, контроль документов. Работаем как “вторые глаза”
+              собственника/директора по закупкам.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#contacts">Получить консультацию</a>
+              <a class="btn" href="#services">Смотреть услуги</a>
+              <a class="btn" href="./profile.pdf" target="_blank" rel="noopener">Скачать профиль (PDF)</a>
+            </div>
+
+            <div class="badges" aria-label="Ключевые акценты">
+              <span class="badge">Проверка контрагентов</span>
+              <span class="badge">Контракты и спецификации</span>
+              <span class="badge">Логистика и Инкотермс</span>
+              <span class="badge">Контроль документов</span>
+              <span class="badge">Переговоры и сопровождение</span>
+            </div>
+          </div>
+
+          <aside class="panel hero-right" aria-label="Кратко о подходе">
+            <div class="stat">
+              <div class="t">Фокус</div>
+              <div class="v">РФ–КНР / ВЭД</div>
+              <div class="s">Импорт, экспорт, индустриальные поставки, B2B.</div>
+            </div>
+            <div class="stat">
+              <div class="t">Формат</div>
+              <div class="v">Под ключ или точечно</div>
+              <div class="s">От разовой проверки до полного ведения сделки.</div>
+            </div>
+            <div class="stat">
+              <div class="t">Принцип</div>
+              <div class="v">Прозрачность и контроль</div>
+              <div class="s">Чек-листы, фиксация договоренностей, минимизация “серых зон”.</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-title">
+          <h2>Услуги</h2>
+          <p class="hint">Можно выбрать пакет или собрать под задачу.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Поиск и подбор поставщика в КНР</h3>
+            <p>Поиск производителей/трейдеров, сбор коммерческих предложений, сравнение условий, рекомендации.</p>
+            <div class="tagline">Результат: shortlist + матрица сравнений.</div>
+          </div>
+
+          <div class="card">
+            <h3>Проверка контрагента и рисков</h3>
+            <p>Базовая due diligence, признаки “прокладки”, репутационные и операционные риски, рекомендации по защите.</p>
+            <div class="tagline">Результат: отчёт + красные флаги + меры.</div>
+          </div>
+
+          <div class="card">
+            <h3>Переговоры и фиксация условий</h3>
+            <p>ТЗ, спецификации, цены, сроки, гарантия, штрафы, упаковка, маркировка, инспекция, приемка.</p>
+            <div class="tagline">Результат: согласованный term sheet.</div>
+          </div>
+
+          <div class="card">
+            <h3>Контракты и спецификации</h3>
+            <p>Структура договора, спецификация, условия оплаты, Инкотермс, документы для таможни и банка.</p>
+            <div class="tagline">Результат: комплект документов под сделку.</div>
+          </div>
+
+          <div class="card">
+            <h3>Логистика и схема поставки</h3>
+            <p>Маршруты, сроки, виды транспорта, страхование, консолидация, контроль отгрузки и документов.</p>
+            <div class="tagline">Результат: логистическая карта + чек-лист.</div>
+          </div>
+
+          <div class="card">
+            <h3>Сопровождение сделки “под ключ”</h3>
+            <p>Единое управление процессом: поставщик → документы → логистика → контроль статусов → закрывающие.</p>
+            <div class="tagline">Результат: управляемый процесс с отчётностью.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-title">
+          <h2>Как мы работаем</h2>
+          <p class="hint">Пошагово, чтобы исключить “потери на стыках”.</p>
+        </div>
+
+        <div class="process">
+          <div class="step">
+            <div class="n">1</div>
+            <p class="t">Бриф и цель</p>
+            <p class="d">Товар/параметры, сроки, бюджет, ограничения, критичные риски, целевой Инкотермс.</p>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <p class="t">Поставщик и условия</p>
+            <p class="d">Поиск/отбор, сравнение КП, переговоры, фиксация спецификаций и гарантий.</p>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <p class="t">Документы и контроль</p>
+            <p class="d">Контракт/спецификация, упаковка/маркировка, инспекция/фото-отчёт, комплект документов.</p>
+          </div>
+          <div class="step">
+            <div class="n">4</div>
+            <p class="t">Поставка и закрытие</p>
+            <p class="d">Логистика, трекинг, сверка документов, поддержка по вопросам приемки.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cases">
+        <div class="section-title">
+          <h2>Кому полезно</h2>
+          <p class="hint">Типовые сценарии, где консалтинг экономит время и деньги.</p>
+        </div>
+
+        <div class="two">
+          <div class="card">
+            <h3>Собственникам и директорам</h3>
+            <p>Нужно быстро понять: “с кем работаем, где риски, как защищаемся, какие цифры реальны”.</p>
+            <ul class="list">
+              <li>Проверка контрагента до оплаты</li>
+              <li>Контроль ключевых условий (цена/срок/качество)</li>
+              <li>Прозрачность процесса и статусов</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Закупкам и ВЭД-менеджерам</h3>
+            <p>Нужны инструменты: чек-листы, документы, переговорная поддержка, подстраховка.</p>
+            <ul class="list">
+              <li>Сравнение КП и выбор оптимального поставщика</li>
+              <li>Спецификации и требование качества “на бумаге”</li>
+              <li>Пакет документов для таможни/банка</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts">
+        <div class="section-title">
+          <h2>Контакты и запрос</h2>
+          <p class="hint">Оставь вводные — отвечу с планом и следующим шагом.</p>
+        </div>
+
+        <div class="contact">
+          <div class="form panel">
+            <form id="leadForm">
+              <label for="name">Имя</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Например: Владимир" />
+
+              <label for="contact">Телефон / Email / WeChat</label>
+              <input id="contact" name="contact" autocomplete="email" placeholder="Например: +7… / name@email / WeChat ID" required />
+
+              <label for="task">Коротко о задаче</label>
+              <textarea id="task" name="task" placeholder="Что поставляем, сроки, объёмы, текущие проблемы/риски…" required></textarea>
+
+              <div class="form-actions">
+                <button id="btnMail" type="button">Сформировать письмо</button>
+                <button class="btn" type="button" id="btnCopy">Скопировать текст</button>
+              </div>
+
+              <div class="note">
+                “Сформировать письмо” откроет почтовый клиент через <b>mailto:</b>.
+                Если почтовый клиент не настроен — используйте “Скопировать текст”.
+              </div>
+            </form>
+          </div>
+
+          <!-- ПЕРЕПИСАНО: только B2B-смысл / доверие, без «вставьте сюда», «локально», без кнопок -->
+          <aside class="sidebar panel" aria-label="Формат работы">
+            <p class="kv"><b>Формат работы</b></p>
+            <div class="sep"></div>
+
+            <p class="kv"><b>Тип задач:</b> разовая задача / проект / сопровождение</p>
+            <p class="kv"><b>География:</b> РФ ↔ КНР</p>
+
+            <div class="sep"></div>
+
+            <p class="kv"><b>Принцип работы:</b></p>
+            <ul class="list">
+              <li><b>Фиксация</b> договорённостей: условия, сроки, ответственность, контроль изменений</li>
+              <li><b>Чек-листы</b> по этапам: поставщик → документы → отгрузка → логистика → приемка</li>
+              <li><b>Контроль статусов</b> и “стыков”: чтобы не терять деньги и время на переходах</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <footer>
+        <div class="wrap">
+          <div class="foot">
+            <div class="mini">
+              <span>© <span id="year"></span> Консалтинг РФ–КНР / ВЭД</span>
+              <span>•</span>
+              <a href="#services">Услуги</a>
+              <a href="#contacts">Контакты</a>
+            </div>
+            <div class="mini">
+              <a href="#top">Наверх ↑</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // ====== Настройка получателя запроса (в коде) ======
+    // Поставьте реальный email получателя, куда должен уходить mailto:
+    const TARGET_EMAIL = "vputilkin@gmail.com";
+
+    // ====== Helpers ======
+    const $ = (sel) => document.querySelector(sel);
+    function sanitize(s){ return (s || "").toString().trim(); }
+    function setText(sel, value){ const el = $(sel); if(el) el.textContent = value; }
+
+    // ====== Init ======
+    setText("#year", new Date().getFullYear());
+
+    // ====== CTA button: scroll to contacts ======
+    $("#btnCall").addEventListener("click", () => {
+      document.getElementById("contacts").scrollIntoView({behavior:"smooth", block:"start"});
+      setTimeout(() => $("#contact")?.focus(), 400);
+    });
+
+    // ====== Lead form → mailto / copy ======
+    function buildLeadText(){
+      const name = sanitize($("#name").value);
+      const contact = sanitize($("#contact").value);
+      const task = sanitize($("#task").value);
+
+      const lines = [
+        "Запрос на консалтинг РФ–КНР / ВЭД",
+        "",
+        `Имя: ${name || "—"}`,
+        `Контакт: ${contact || "—"}`,
+        "",
+        "Задача / вводные:",
+        task || "—",
+        "",
+        "Просьба: предложите план действий, оценку сроков и формат работы."
+      ];
+      return lines.join("\n");
+    }
+
+    function mailto(email, subject, body){
+      const url =
+        "mailto:" + encodeURIComponent(email) +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      window.location.href = url;
+    }
+
+    $("#leadForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const subject = "Запрос: консалтинг РФ–КНР / ВЭД";
+      const body = buildLeadText();
+      mailto(TARGET_EMAIL, subject, body);
+    });
+
+    $("#btnCopy").addEventListener("click", async () => {
+      const txt = buildLeadText();
+      try{
+        await navigator.clipboard.writeText(txt);
+        alert("Текст скопирован в буфер обмена.");
+      }catch(err){
+        const ta = document.createElement("textarea");
+        ta.value = txt;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        alert("Текст скопирован.");
+      }
+    });
+  </script>
+</body>
+</html>
