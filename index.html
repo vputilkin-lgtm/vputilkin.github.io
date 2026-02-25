@@ -524,7 +524,7 @@
               <textarea id="task" name="task" placeholder="Что поставляем, сроки, объёмы, текущие проблемы/риски…" required></textarea>
 
               <div class="form-actions">
-                <button class="btn primary" type="submit">Сформировать письмо</button>
+                <button class="btn primary" type="button" id="btnMail">Сформировать письмо</button>
                 <button class="btn" type="button" id="btnCopy">Скопировать текст</button>
               </div>
 
@@ -647,6 +647,43 @@
         alert("Текст скопирован.");
       }
     });
-  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const btnMail = document.getElementById("btnMail");
+
+    btnMail.addEventListener("click", function () {
+
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const task = document.getElementById("task").value.trim();
+
+      if (!contact || !task) {
+        alert("Пожалуйста, заполните контакт и описание задачи.");
+        return;
+      }
+
+      const to = "v@putilkin.ru";
+
+      const subject = `Запрос с сайта — ${name || "без имени"}`;
+
+      const body =
+`Имя: ${name}
+Контакт: ${contact}
+
+Задача:
+${task}
+
+Источник: https://vputilkin-lgtm.github.io/`;
+
+      const mailtoUrl =
+        `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Открываем почтовый клиент
+      window.location.href = mailtoUrl;
+    });
+
+  });
+</script>
 </body>
 </html>
