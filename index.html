@@ -648,42 +648,51 @@
       }
     });
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  const btnMail = document.getElementById("btnMail");
+  const btnCopy = document.getElementById("btnCopy");
 
-    const btnMail = document.getElementById("btnMail");
+  const getText = () => {
+    const name = document.getElementById("name")?.value?.trim() || "";
+    const contact = document.getElementById("contact")?.value?.trim() || "";
+    const task = document.getElementById("task")?.value?.trim() || "";
 
-    btnMail.addEventListener("click", function () {
-
-      const name = document.getElementById("name").value.trim();
-      const contact = document.getElementById("contact").value.trim();
-      const task = document.getElementById("task").value.trim();
-
-      if (!contact || !task) {
-        alert("Пожалуйста, заполните контакт и описание задачи.");
-        return;
-      }
-
-      const to = "v@putilkin.ru";
-
-      const subject = `Запрос с сайта — ${name || "без имени"}`;
-
-      const body =
-`Имя: ${name}
+    return `Имя: ${name}
 Контакт: ${contact}
 
 Задача:
 ${task}
 
 Источник: https://vputilkin-lgtm.github.io/`;
+  };
 
-      const mailtoUrl =
-        `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  btnMail?.addEventListener("click", () => {
+    const contact = document.getElementById("contact")?.value?.trim() || "";
+    const task = document.getElementById("task")?.value?.trim() || "";
+    const name = document.getElementById("name")?.value?.trim() || "";
 
-      // Открываем почтовый клиент
-      window.location.href = mailtoUrl;
-    });
+    if (!contact || !task) {
+      alert("Пожалуйста, заполните контакт и описание задачи.");
+      return;
+    }
 
+    const to = "vputilkin@gmail.com";
+    const subject = `Запрос с сайта — ${name || "без имени"}`;
+    const body = getText();
+
+    const url = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = url;
   });
+
+  btnCopy?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(getText());
+      alert("Текст скопирован.");
+    } catch (e) {
+      alert("Не удалось скопировать автоматически. Выделите текст и скопируйте вручную.");
+    }
+  });
+});
 </script>
 </body>
 </html>
