@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Консалтинг РФ–КНР / ВЭД — сопровождение поставок, контрагентов, контрактов</title>
+  <meta name="description" content="Консалтинг по направлению РФ–КНР / ВЭД: поиск поставщиков, проверка контрагентов, сопровождение контрактов и логистики. Практично, по делу, с контролем рисков." />
+
+  <meta property="og:title" content="Консалтинг РФ–КНР / ВЭД" />
+  <meta property="og:description" content="Сопровождение сделок и поставок РФ↔КНР: контрагенты, контракты, документы, логистика, контроль рисков." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --panel:#12151b;
+      --panel2:#0f1217;
+      --text:#e9eef7;
+      --muted:#a6b0c3;
+      --line:rgba(255,255,255,.10);
+      --brand:#76a7ff;
+      --brand2:#6ee7b7;
+      --warn:#fbbf24;
+
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 1120px;
+
+      --stickyBarH: 78px; /* чуть выше из-за 2 строк */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(118,167,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(110,231,183,.14), transparent 55%),
+        radial-gradient(800px 500px at 50% 120%, rgba(251,191,36,.08), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+
+    @media (max-width: 860px){
+      body{ padding-bottom: var(--stickyBarH); }
+    }
+
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,13,16,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(118,167,255,.95), rgba(110,231,183,.85));
+      box-shadow: 0 8px 20px rgba(118,167,255,.18);
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .nav-links{
+      display:flex; gap:18px; align-items:center;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{opacity:.9}
+    .nav-links a:hover{opacity:1;color:var(--text)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:800;
+      font-size:14px;
+      gap:8px;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.16)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      border-color: rgba(118,167,255,.38);
+      background: linear-gradient(135deg, rgba(118,167,255,.28), rgba(110,231,183,.14));
+    }
+    .btn.primary:hover{
+      border-color: rgba(118,167,255,.55);
+      background: linear-gradient(135deg, rgba(118,167,255,.34), rgba(110,231,183,.18));
+    }
+    .btn.wa{
+      border-color: rgba(110,231,183,.30);
+      background: rgba(110,231,183,.10);
+    }
+    .btn.tg{
+      border-color: rgba(118,167,255,.30);
+      background: rgba(118,167,255,.10);
+    }
+
+    .icon{
+      width:16px; height:16px;
+      display:inline-block;
+      flex:0 0 16px;
+      opacity:.95;
+    }
+    .icon svg{width:16px;height:16px;display:block}
+
+    main{padding:34px 0 60px}
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+    }
+    .panel{
+      background: rgba(18,21,27,.82);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:26px 26px 22px}
+    .hero-right{padding:24px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.25px;
+      text-transform:uppercase;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--brand2);
+      box-shadow:0 0 0 4px rgba(110,231,183,.12);
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size:38px;
+      line-height:1.15;
+      letter-spacing:-.6px;
+    }
+    @media (max-width:520px){
+      h1{font-size:30px}
+    }
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      margin:0 0 16px;
+      max-width: 62ch;
+    }
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+
+    .mini{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:18px;
+    }
+    @media (max-width:520px){
+      .mini{grid-template-columns:1fr}
+    }
+    .card{
+      padding:14px 14px;
+      background: rgba(15,18,23,.8);
+      border:1px solid var(--line);
+      border-radius: 14px;
+    }
+    .card b{display:block; font-size:14px; margin-bottom:4px}
+    .card span{color:var(--muted); font-size:13px}
+
+    section{margin-top:28px}
+    .section-title{
+      margin:0 0 14px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .hint{color:var(--muted); margin:0; font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .service{
+      padding:16px;
+      border-radius: 16px;
+      background: rgba(18,21,27,.82);
+      border:1px solid var(--line);
+    }
+    .service h3{
+      margin:0 0 6px;
+      font-size:16px;
+      letter-spacing:-.1px;
+    }
+    .service p{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{
+      font-size:12px;
+      padding:6px 9px;
+      border-radius: 999px;
+      background: rgba(118,167,255,.12);
+      border:1px solid rgba(118,167,255,.22);
+      color: rgba(233,238,247,.95);
+      font-weight:700;
+    }
+    .chip.green{
+      background: rgba(110,231,183,.12);
+      border:1px solid rgba(110,231,183,.22);
+    }
+    .chip.warn{
+      background: rgba(251,191,36,.12);
+      border:1px solid rgba(251,191,36,.22);
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 980px){
+      .steps{grid-template-columns:1fr}
+    }
+    .step{
+      padding:16px;
+      border-radius: 16px;
+      background: rgba(18,21,27,.82);
+      border:1px solid var(--line);
+    }
+    .step .n{
+      font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:28px;height:28px;
+      border-radius:10px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      margin-right:10px;
+    }
+    .step h3{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+    .step p{margin:0; color:var(--muted); font-size:14px}
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr .9fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .contact{grid-template-columns:1fr}
+    }
+    .form{padding:18px}
+    label{display:block; margin:12px 0 6px; font-weight:800; font-size:13px; color:rgba(233,238,247,.95)}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height: 120px; resize:vertical}
+    input:focus, textarea:focus{border-color: rgba(118,167,255,.5); box-shadow: 0 0 0 4px rgba(118,167,255,.10)}
+    .form-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .note{margin-top:10px; color:var(--muted); font-size:13px}
+
+    .sidebar{padding:18px}
+    .kv{margin:0 0 10px; color:var(--muted); font-size:14px}
+    .kv b{color:var(--text)}
+    .sep{height:1px; background: var(--line); margin:12px 0}
+    ul{padding-left:18px; margin:0}
+    li{margin:6px 0; color:var(--muted); font-size:14px}
+    .list b{color:var(--text)}
+
+    footer{
+      margin-top:34px;
+      padding:18px 0 28px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+    }
+    .footer-grid{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer-grid .small{font-size:13px}
+    .links{display:flex; gap:12px; flex-wrap:wrap}
+    .links a{
+      font-weight:800; font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .links a:hover{background: rgba(255,255,255,.06)}
+
+    /* ====== Нижняя мобильная панель ====== */
+    .sticky-bar{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 50;
+      display: none;
+      background: rgba(11,13,16,.70);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+    }
+    .sticky-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .sticky-bar .btn{
+      width:100%;
+      padding: 10px 12px;
+      border-radius: 14px;
+      justify-content:flex-start;
+      gap:10px;
+    }
+    .sticky-label{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+      text-align:left;
+    }
+    .sticky-title{
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:-.1px;
+    }
+    .sticky-sub{
+      margin-top:3px;
+      font-size:12px;
+      font-weight:800;
+      color: rgba(233,238,247,.78);
+    }
+    .sticky-bar .icon{
+      width:18px;height:18px;flex:0 0 18px;
+    }
+    .sticky-bar .icon svg{width:18px;height:18px}
+    @media (max-width: 860px){
+      .sticky-bar{display:block;}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Консалтинг РФ–КНР / ВЭД",
+    "areaServed":"RU, CN",
+    "serviceType":"ВЭД консалтинг, сопровождение поставок",
+    "email":"v@putilkin.ru"
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand" aria-label="Бренд">
+          <div class="logo" aria-hidden="true"></div>
+          <div>ВЭД РФ–КНР</div>
+        </div>
+
+        <div class="nav-right">
+          <nav class="nav-links" aria-label="Навигация">
+            <a href="#services">Услуги</a>
+            <a href="#process">Как работаю</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+
+          <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
+              </svg>
+            </span>
+            WhatsApp
+          </a>
+
+          <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Telegram
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="hero">
+        <div class="hero-left panel">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> Практический консалтинг по направлению РФ ↔ КНР</div>
+          <h1>Сопровождение поставок, контрагентов и контрактов — без “воды”, с контролем рисков</h1>
+          <p class="lead">
+            Помогаю быстро и аккуратно пройти путь от постановки задачи до сделки: проверка поставщика,
+            подготовка и контроль документов, координация логистики, фиксация условий и ответственность сторон.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#contacts">Получить консультацию</a>
+            <a class="btn" href="#services">Смотреть услуги</a>
+            <a class="btn" href="./profile.pdf" target="_blank" rel="noopener">Скачать профиль (PDF)</a>
+
+            <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
+                </svg>
+              </span>
+              WhatsApp
+            </a>
+
+            <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Telegram
+            </a>
+          </div>
+
+          <div class="mini" aria-label="Ключевые тезисы">
+            <div class="card">
+              <b>Фокус</b>
+              <span>РФ ↔ КНР: импорт/экспорт, поставки, контракты, риски</span>
+            </div>
+            <div class="card">
+              <b>Формат</b>
+              <span>Разовые задачи, проектное сопровождение, “под ключ” по этапам</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right panel">
+          <div class="section-title" style="margin-bottom:10px;">
+            <h2 style="font-size:18px;margin:0;">Что беру на себя</h2>
+            <p class="hint">Типовые “боли” и где часто теряются деньги</p>
+          </div>
+
+          <div class="grid" style="grid-template-columns:1fr; gap:10px;">
+            <div class="service">
+              <h3>Поставщик и контрагент</h3>
+              <p>Проверка вводных, репутации, рисков, соответствия задачи возможностям поставщика.</p>
+              <div class="chips">
+                <span class="chip">Due diligence</span>
+                <span class="chip green">Риски</span>
+              </div>
+            </div>
+
+            <div class="service">
+              <h3>Контракт и условия</h3>
+              <p>Фиксация коммерческих условий, ответственность, изменения, контроль “серых зон”.</p>
+              <div class="chips">
+                <span class="chip">Terms</span>
+                <span class="chip warn">Контроль изменений</span>
+              </div>
+            </div>
+
+            <div class="service">
+              <h3>Документы и логистика</h3>
+              <p>Пакет документов, отгрузка, координация статусов и стыков, приемка.</p>
+              <div class="chips">
+                <span class="chip">Docs</span>
+                <span class="chip green">Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="services">
+        <div class="section-title">
+          <h2>Услуги</h2>
+          <p class="hint">Собрано по наиболее частым запросам</p>
+        </div>
+
+        <div class="grid">
+          <div class="service">
+            <h3>Поиск и подбор поставщика</h3>
+            <p>Отбор 2–5 вариантов, коммуникация, проверка вводных, сравнение условий.</p>
+            <div class="chips">
+              <span class="chip">Sourcing</span>
+              <span class="chip green">Квалификация</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3>Проверка контрагента</h3>
+            <p>Сбор информации, “красные флаги”, оценка надежности и рисков.</p>
+            <div class="chips">
+              <span class="chip">Check</span>
+              <span class="chip warn">Red flags</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3>Сопровождение контракта</h3>
+            <p>Условия, ответственность, документооборот, изменения и контроль исполнения.</p>
+            <div class="chips">
+              <span class="chip">Contract</span>
+              <span class="chip green">Контроль</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3>Сопровождение поставки</h3>
+            <p>План-график, статусы, отгрузка, логистика, приемка, закрывающие документы.</p>
+            <div class="chips">
+              <span class="chip">Delivery</span>
+              <span class="chip green">Checklist</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3>Риск-менеджмент</h3>
+            <p>Слабые места на переходах между этапами: деньги, сроки, качество, документы.</p>
+            <div class="chips">
+              <span class="chip warn">Risks</span>
+              <span class="chip">Mitigation</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3>Разовый разбор</h3>
+            <p>Быстро “приземлить” задачу: что делать, в каком порядке, где основные риски.</p>
+            <div class="chips">
+              <span class="chip">One-off</span>
+              <span class="chip green">План действий</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-title">
+          <h2>Как работаю</h2>
+          <p class="hint">Прозрачно, по шагам — чтобы не терять время и деньги</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <h3><span class="n">1</span> Вводные и цель</h3>
+            <p>Коротко фиксируем задачу, ограничения по срокам/бюджету, критерии успеха и риски.</p>
+          </div>
+          <div class="step">
+            <h3><span class="n">2</span> План и чек-листы</h3>
+            <p>Даю структуру действий по этапам: поставщик → контракт → документы → отгрузка → логистика → приемка.</p>
+          </div>
+          <div class="step">
+            <h3><span class="n">3</span> Исполнение и контроль</h3>
+            <p>Контроль статусов и “стыков”, коммуникация с участниками, фиксация изменений и решений.</p>
+          </div>
+          <div class="step">
+            <h3><span class="n">4</span> Результат</h3>
+            <p>Закрытие этапов документально, финальные подтверждения, рекомендации на следующий шаг.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts">
+        <div class="section-title">
+          <h2>Контакты и запрос</h2>
+          <p class="hint">Оставь вводные — отвечу с планом и следующим шагом.</p>
+        </div>
+
+        <div class="contact">
+          <div class="form panel">
+            <form id="leadForm">
+              <label for="name">Имя</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Например: Владимир" />
+
+              <label for="contact">Телефон / Email / WeChat</label>
+              <input id="contact" name="contact" autocomplete="email" placeholder="Например: +7… / name@email / WeChat ID" required />
+
+              <label for="task">Коротко о задаче</label>
+              <textarea id="task" name="task" placeholder="Что поставляем, сроки, объёмы, текущие проблемы/риски…" required></textarea>
+
+              <div class="form-actions">
+                <button class="btn primary" type="button" id="btnMail">Сформировать письмо</button>
+                <button class="btn" type="button" id="btnCopy">Скопировать текст</button>
+              </div>
+
+              <div class="note">
+                “Сформировать письмо” откроет почтовый клиент через <b>mailto:</b>.
+                Если почтовый клиент не настроен — используйте “Скопировать текст”.
+              </div>
+            </form>
+          </div>
+
+          <aside class="sidebar panel" aria-label="Формат работы">
+            <p class="kv"><b>Быстрый контакт</b></p>
+            <div class="sep"></div>
+            <p class="kv">
+              <b>Email:</b> v@putilkin.ru<br/>
+              <b>WhatsApp:</b> +1 647 278 8058<br/>
+              <b>Telegram:</b> @vputilkin
+            </p>
+
+            <div class="form-actions" style="margin-top:10px;">
+              <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener">Telegram</a>
+            </div>
+
+            <div class="sep"></div>
+
+            <p class="kv"><b>Принцип работы:</b></p>
+            <ul class="list">
+              <li><b>Фиксация</b> договорённостей: условия, сроки, ответственность, контроль изменений</li>
+              <li><b>Чек-листы</b> по этапам: поставщик → документы → отгрузка → логистика → приемка</li>
+              <li><b>Контроль статусов</b> и “стыков”: чтобы не терять деньги и время на переходах</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-grid">
+          <div class="small">© <span id="y"></span> · Консалтинг РФ–КНР / ВЭД · Email: <b>v@putilkin.ru</b></div>
+          <div class="links" aria-label="Быстрые ссылки">
+            <a href="#services">Услуги</a>
+            <a href="#process">Процесс</a>
+            <a href="#contacts">Запрос</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Нижняя панель (мобайл) -->
+  <div class="sticky-bar" role="navigation" aria-label="Быстрые контакты">
+    <div class="sticky-inner">
+      <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="sticky-label">
+          <span class="sticky-title">Написать</span>
+          <span class="sticky-sub">WhatsApp</span>
+        </span>
+      </a>
+
+      <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="sticky-label">
+          <span class="sticky-title">Написать</span>
+          <span class="sticky-sub">Telegram</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const TARGET_EMAIL = "v@putilkin.ru";
+
+    const $ = (sel) => document.querySelector(sel);
+
+    function buildLeadText() {
+      const name = ($("#name")?.value || "").trim();
+      const contact = ($("#contact")?.value || "").trim();
+      const task = ($("#task")?.value || "").trim();
+
+      const lines = [];
+      lines.push("Здравствуйте!");
+      lines.push("");
+      lines.push("Коротко о задаче:");
+      lines.push(task || "—");
+      lines.push("");
+      lines.push("Контакт для связи:");
+      lines.push(contact || "—");
+      if (name) {
+        lines.push("");
+        lines.push("Имя:");
+        lines.push(name);
+      }
+      lines.push("");
+      lines.push("Спасибо.");
+      return lines.join("\n");
+    }
+
+    async function copyToClipboard(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (_) {}
+
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        ta.style.top = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    $("#y").textContent = new Date().getFullYear();
+
+    const form = $("#leadForm");
+    const btnMail = $("#btnMail");
+    const btnCopy = $("#btnCopy");
+
+    btnMail?.addEventListener("click", () => {
+      if (form && !form.reportValidity()) return;
+
+      const subject = encodeURIComponent("Запрос: консалтинг РФ–КНР / ВЭД");
+      const body = encodeURIComponent(buildLeadText());
+      window.location.href = `mailto:${encodeURIComponent(TARGET_EMAIL)}?subject=${subject}&body=${body}`;
+    });
+
+    btnCopy?.addEventListener("click", async () => {
+      if (form && !form.reportValidity()) return;
+
+      const text = buildLeadText();
+      const ok = await copyToClipboard(text);
+      alert(ok ? "Текст скопирован в буфер обмена." : "Не удалось скопировать автоматически. Выделите и скопируйте вручную.");
+    });
+
+    function wireTelegramFallback(anchor) {
+      if (!anchor) return;
+      const fallback = anchor.getAttribute("data-fallback");
+      if (!fallback) return;
+
+      anchor.addEventListener("click", () => {
+        const t = setTimeout(() => {
+          window.open(fallback, "_blank", "noopener");
+        }, 700);
+
+        const onBlur = () => {
+          clearTimeout(t);
+          window.removeEventListener("blur", onBlur);
+        };
+        window.addEventListener("blur", onBlur);
+      }, { passive: true });
+    }
+
+    document.querySelectorAll('a[data-fallback]').forEach(wireTelegramFallback);
+  </script>
+</body>
+</html>
