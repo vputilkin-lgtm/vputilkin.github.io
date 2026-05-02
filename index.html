@@ -10,6 +10,10 @@
   <meta property="og:title" content="Консалтинг РФ–КНР / ВЭД" />
   <meta property="og:description" content="Сопровождение сделок и поставок РФ↔КНР: контрагенты, контракты, документы, логистика, контроль рисков." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.vputilkin.ru/og-cover.jpg" />
+  <meta property="og:url" content="https://www.vputilkin.ru/" />
+  <link rel="canonical" href="https://www.vputilkin.ru/" />
+  <meta name="theme-color" content="#0b0d10" />
 
   <style>
     :root{
@@ -31,6 +35,7 @@
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{height:100%}
     body{
       margin:0;
@@ -226,6 +231,9 @@
       gap:14px;
     }
     @media (max-width: 980px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 560px){
       .grid{grid-template-columns:1fr}
     }
 
@@ -417,6 +425,18 @@
 </head>
 
 <body>
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-wa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-tg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <header>
     <div class="wrap">
       <div class="nav">
@@ -434,21 +454,14 @@
 
           <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
             <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
-              </svg>
+              <svg><use href="#icon-wa"/></svg>
             </span>
             WhatsApp
           </a>
 
           <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener" aria-label="Написать в Telegram">
             <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
+              <svg><use href="#icon-tg"/></svg>
             </span>
             Telegram
           </a>
@@ -475,21 +488,14 @@
 
             <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener">
               <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                  <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
-                </svg>
+                <svg><use href="#icon-wa"/></svg>
               </span>
               WhatsApp
             </a>
 
             <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener">
               <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                  <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
+                <svg><use href="#icon-tg"/></svg>
               </span>
               Telegram
             </a>
@@ -518,7 +524,7 @@
               <h3>Поставщик и контрагент</h3>
               <p>Проверка вводных, репутации, рисков, соответствия задачи возможностям поставщика.</p>
               <div class="chips">
-                <span class="chip">Аудит</span>
+                <span class="chip">Due diligence</span>
                 <span class="chip green">Риски</span>
               </div>
             </div>
@@ -527,7 +533,7 @@
               <h3>Контракт и условия</h3>
               <p>Фиксация коммерческих условий, ответственность, изменения, контроль “серых зон”.</p>
               <div class="chips">
-                <span class="chip">Условия</span>
+                <span class="chip">Terms</span>
                 <span class="chip warn">Контроль изменений</span>
               </div>
             </div>
@@ -536,8 +542,8 @@
               <h3>Документы и логистика</h3>
               <p>Пакет документов, отгрузка, координация статусов и стыков, приемка.</p>
               <div class="chips">
-                <span class="chip">Документы</span>
-                <span class="chip green">Доставка</span>
+                <span class="chip">Docs</span>
+                <span class="chip green">Delivery</span>
               </div>
             </div>
           </div>
@@ -555,7 +561,7 @@
             <h3>Поиск и подбор поставщика</h3>
             <p>Отбор 2–5 вариантов, коммуникация, проверка вводных, сравнение условий.</p>
             <div class="chips">
-              <span class="chip">Поиск</span>
+              <span class="chip">Sourcing</span>
               <span class="chip green">Квалификация</span>
             </div>
           </div>
@@ -564,8 +570,8 @@
             <h3>Проверка контрагента</h3>
             <p>Сбор информации, “красные флаги”, оценка надежности и рисков.</p>
             <div class="chips">
-              <span class="chip">Проверка</span>
-              <span class="chip warn">Красный флаг</span>
+              <span class="chip">Check</span>
+              <span class="chip warn">Red flags</span>
             </div>
           </div>
 
@@ -573,7 +579,7 @@
             <h3>Сопровождение контракта</h3>
             <p>Условия, ответственность, документооборот, изменения и контроль исполнения.</p>
             <div class="chips">
-              <span class="chip">Контракт</span>
+              <span class="chip">Contract</span>
               <span class="chip green">Контроль</span>
             </div>
           </div>
@@ -582,8 +588,8 @@
             <h3>Сопровождение поставки</h3>
             <p>План-график, статусы, отгрузка, логистика, приемка, закрывающие документы.</p>
             <div class="chips">
-              <span class="chip">Поставка</span>
-              <span class="chip green">Контроль</span>
+              <span class="chip">Delivery</span>
+              <span class="chip green">Checklist</span>
             </div>
           </div>
 
@@ -591,8 +597,8 @@
             <h3>Риск-менеджмент</h3>
             <p>Слабые места на переходах между этапами: деньги, сроки, качество, документы.</p>
             <div class="chips">
-              <span class="chip warn">Риски</span>
-              <span class="chip">Защита</span>
+              <span class="chip warn">Risks</span>
+              <span class="chip">Mitigation</span>
             </div>
           </div>
 
@@ -600,7 +606,7 @@
             <h3>Разовый разбор</h3>
             <p>Быстро “приземлить” задачу: что делать, в каком порядке, где основные риски.</p>
             <div class="chips">
-              <span class="chip">Разово</span>
+              <span class="chip">One-off</span>
               <span class="chip green">План действий</span>
             </div>
           </div>
@@ -707,10 +713,7 @@
     <div class="sticky-inner">
       <a class="btn wa" href="https://wa.me/16472788058" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
         <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.5 11.7c0 4.8-3.9 8.7-8.7 8.7-1.5 0-2.9-.4-4.2-1l-3.1 1 1-3c-.7-1.3-1.1-2.8-1.1-4.4 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M9.2 8.6c.2-.3.3-.4.6-.4h.5c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5.1.2.1.4 0 .6l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.3 1.1 2.4 1.4 2.8 1.6.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1 1.2-.3 1.7-.4.5-.9.7-1.5.7-.4 0-1.4-.1-2.9-.8-1.9-.9-3.2-2.2-4-3.1-1.1-1.3-1.6-2.6-1.7-3.3-.1-.5 0-1 .2-1.3Z" fill="currentColor"/>
-          </svg>
+          <svg><use href="#icon-wa"/></svg>
         </span>
         <span class="sticky-label">
           <span class="sticky-title">Написать</span>
@@ -720,11 +723,7 @@
 
       <a class="btn tg" href="tg://resolve?domain=vputilkin" data-fallback="https://t.me/vputilkin" target="_blank" rel="noopener" aria-label="Написать в Telegram">
         <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.7 4.9 3.9 11.6c-1 .4-1 1.8.1 2.1l4.2 1.4 1.6 4.9c.3 1 1.6 1.2 2.2.4l2.4-3.2 4.6 3.4c.8.6 2 .1 2.2-.9l2.8-13.2c.2-1.1-.8-2-1.9-1.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M8.2 15.1 18.7 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M8.1 15.1 9.8 16.6c.2.2.3.4.3.7l.2 2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
+          <svg><use href="#icon-tg"/></svg>
         </span>
         <span class="sticky-label">
           <span class="sticky-title">Написать</span>
@@ -799,6 +798,10 @@
       const subject = encodeURIComponent("Запрос: консалтинг РФ–КНР / ВЭД");
       const body = encodeURIComponent(buildLeadText());
       window.location.href = `mailto:${encodeURIComponent(TARGET_EMAIL)}?subject=${subject}&body=${body}`;
+
+      const orig = btnMail.textContent;
+      btnMail.textContent = "Письмо открыто ✓";
+      setTimeout(() => { btnMail.textContent = orig; }, 3000);
     });
 
     btnCopy?.addEventListener("click", async () => {
